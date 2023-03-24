@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+<style>
+.container {
+  padding: 16px;
+}
+
+.background {
+        background-color: pink;
+        text-align: center;
+}
+</style>
+</head>
+<body class="background">
+<form action="login" method="post">
+  {% csrf_token %}
+    <div class="container">
+  <label><b>Username</b></label>
+  <input type="text" name="username" placeholder="username"><br>
+
+  <label><b>Password</b></label>
+  <input type="password" name="password" placeholder="password"><br>
+
+  <button type="submit"><a href="loggedin">Login</a></button>
+    </div>
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn"><a href="/">Cancel</a></button>
+    <span><a href="register">REGISTER</a></span>
+  </div>
+</form>
+</body>
+</html>

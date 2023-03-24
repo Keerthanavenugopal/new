@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h2>Register</h2>-->
+<!--<form action="register" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    <input type="text" name="username" placeholder="username"><br>-->
+<!--    <input type="text" name="first_name" placeholder=" enter first name"><br>-->
+<!--    <input type="text" name="last_name" placeholder="enter last name"><br>-->
+<!--    <input type="email" name="email" placeholder="enter email"><br>-->
+<!--    <input type="password" name="password" placeholder="Enter password"><br>-->
+<!--    <input type="password" name="password1" placeholder="Confirm password"><br>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+<!--{% for msg in messages %}-->
+<!--{{msg}}-->
+<!--{% endfor %}-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+  <style>
+    form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    button {
+    background-color: rgb(68, 18, 232);
+    color: white;
+    border-radius: 0.25em;
+    }
+    input {
+    margin: 0.25em 0em 1em 0em;
+    outline: none;
+    padding: 0.5em;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    border-radius: 0.25em;
+    color: black;
+    }
+    .container{
+    border: 1px solid;
+    }
+  </style>
+
+</head>
+
+<body style="background-color: pink;">
+
+<div>
+    <h1 style="text-align: center;">Registration form</h1>
+</div>
+
+<form method="post", class="container", action="register">
+    {% csrf_token %}
+  <label> User name </label>
+  <input type="text" name='username' placeholder="Enter user name"><br>
+  <label> Email </label>
+  <input type="email" name='email' placeholder="Enter Email"><br>
+  <label> Phone number </label>
+  <input type="number" name='number' placeholder="Enter Number"><br>
+  <label> Gender </label>
+  <div><input type="radio" name='gender' value="Female">Female<input type="radio" name='gender' value="Male">Male<input type="radio" name='gender' value="Not ready to disclose">Not ready to disclose</div><br>
+  <label> Password </label>
+  <input type="password" name='pwd' placeholder="Enter password" minlength="8"><br>
+  <label> Confirm password </label>
+  <input type="password" name='pwd' placeholder="Reenter password" minlength="8" ><br>
+  <fieldset>
+    <legend>Iam ready to join:</legend>
+
+    <div>
+       <label> Yes </label>
+       <input type="checkbox"  id='yes' name='Yes'><br>
+    </div>
+
+    <div>
+       <label> No </label>
+       <input type="checkbox"  id='No' name='No'><br>
+    </div>
+ </fieldset>
+
+    <button type="submit" ><a href="submitted">SUBMIT</a></button>
+
+     <div>
+        <p>Already have an account? <a href="login">Log in</a>.</p>
+      </div>
+
+
+
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+
+</html>
+
